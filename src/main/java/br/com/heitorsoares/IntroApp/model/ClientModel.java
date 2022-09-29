@@ -20,4 +20,8 @@ public class ClientModel {
     @Column(nullable = false, length = 50)
     private String city;
 
+    //.. new attributes of V2
+
+    @Column(nullable = true, length = 100)
+    private String email;
 }

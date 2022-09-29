@@ -1,7 +1,8 @@
 package br.com.heitorsoares.IntroApp.controller;
 
 import br.com.heitorsoares.IntroApp.model.ClientModel;
-import br.com.heitorsoares.IntroApp.service.ClientService;
+import br.com.heitorsoares.IntroApp.service.ClientServiceV1;
+import br.com.heitorsoares.IntroApp.service.ClientServiceV2;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -10,24 +11,24 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/clients")
-public class ClientController {
+@RequestMapping("/clients/v2")
+public class ClientControllerV2 {
 
     @Autowired
-    private ClientService service;
+    private ClientServiceV2 service;
 
     @GetMapping("/{id}")
-    public Optional<ClientModel> findById(@PathVariable("id") long id){
+    public Optional<ClientModel> findById(@PathVariable("id") long id) {
         return service.findById(id);
     }
 
     @GetMapping
-    public List<ClientModel> findAll(){
-        return  service.findAll();
+    public List<ClientModel> findAll() {
+        return service.findAll();
     }
 
     @PostMapping
-    public ClientModel save(@RequestBody ClientModel model){
+    public ClientModel save(@RequestBody ClientModel model) {
         return service.save(model);
     }
 
@@ -37,13 +38,18 @@ public class ClientController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<?> delete(@PathVariable("id") long id){
+    public ResponseEntity<?> delete(@PathVariable("id") long id) {
         var found = service.findById(id);
-        if(found.isPresent()){
+        if (found.isPresent()) {
             service.delete(id);
             return ResponseEntity.ok().build();
         } else {
             return null;
         }
+    }
+
+    @GetMapping("/find/email/{email}")
+    public List<ClientModel> findByEmail(@PathVariable("email") String email) {
+        return service.findByEmail(email);
     }
 }

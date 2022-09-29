@@ -6,114 +6,179 @@
 	},
 	"item": [
 		{
-			"name": "salvar-client",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"name\": \"Maiku\",\r\n    \"gender\": \"F\",\r\n    \"city\": \"São Francisco/SP\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+			"name": "v1",
+			"item": [
+				{
+					"name": "salvar-client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Maiku\",\r\n    \"gender\": \"F\",\r\n    \"city\": \"São Francisco/SP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/clients/v1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clients",
+								"v1"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:8081/clients",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"clients"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "buscar-clients-id",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8081/clients/1",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"clients",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "buscar-clients",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8081/clients",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"clients"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "atualizar-client",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"Maiku jhekison\",\r\n    \"gender\": \"M\",\r\n    \"city\": \"São Francisco/SP\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
+				{
+					"name": "buscar-clients-id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/clients/v1/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clients",
+								"v1",
+								"1"
+							]
 						}
-					}
+					},
+					"response": []
 				},
-				"url": {
-					"raw": "localhost:8081/clients",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"clients"
-					]
+				{
+					"name": "buscar-clients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/clients/v1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clients",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar-client",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"Maiku jhekison\",\r\n    \"gender\": \"M\",\r\n    \"city\": \"São Francisco/SP\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/clients/v1",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clients",
+								"v1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletar-client",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/clients/v1/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clients",
+								"v1",
+								"3"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		},
 		{
-			"name": "deletar-client",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "localhost:8081/clients/3",
-					"host": [
-						"localhost"
-					],
-					"port": "8081",
-					"path": [
-						"clients",
-						"3"
-					]
+			"name": "v2",
+			"item": [
+				{
+					"name": "salvar-client",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Maiku\",\r\n    \"gender\": \"F\",\r\n    \"city\": \"São Francisco/SP\",\r\n    \"email\": \"maiku@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8081/clients/v2",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clients",
+								"v2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "buscar-clients-email",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8081/clients/v2/find/email/heitor",
+							"host": [
+								"localhost"
+							],
+							"port": "8081",
+							"path": [
+								"clients",
+								"v2",
+								"find",
+								"email",
+								"heitor"
+							]
+						}
+					},
+					"response": []
 				}
-			},
-			"response": []
+			]
 		}
 	]
 }
